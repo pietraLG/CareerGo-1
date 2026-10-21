@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual do Usuário & Documentação – CareerGo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="../web/favicon.png">
+</head>
+<body>
+
+  <!-- ──────────────── TOP NAVIGATION BAR ──────────────── -->
+  <header class="topbar">
+    <a href="#inicio" class="logo-wrap">
+      <div class="logo-icon">🚀</div>
+      <div class="logo-text">Career<span>Go</span></div>
+    </a>
+    <div class="topbar-actions">
+      <span class="badge-version">v1.0.0 Oficial</span>
+      <button class="btn-print" onclick="window.print()">
+        <span>🖨️</span> Imprimir / Salvar PDF
+      </button>
+    </div>
+  </header>
+
+  <div class="doc-container">
+
+    <!-- ──────────────── SIDEBAR DE NAVEGAÇÃO ──────────────── -->
+    <aside class="sidebar">
+      <div class="nav-title">Introdução</div>
+      <ul class="nav-menu">
+        <li><a href="#inicio" class="nav-link active"><span class="icon">🏠</span> Início & Visão Geral</a></li>
+        <li><a href="#arquitetura" class="nav-link"><span class="icon">⚙️</span> Tecnologias do App</a></li>
+      </ul>
+
+      <div class="nav-title">Manual de Funcionalidades</div>
+      <ul class="nav-menu">
+        <li><a href="#autenticacao" class="nav-link"><span class="icon">🔐</span> Login & Cadastro</a></li>
+        <li><a href="#dashboard" class="nav-link"><span class="icon">📊</span> Painel Inicial</a></li>
+        <li><a href="#vagas" class="nav-link"><span class="icon">💼</span> Busca de Vagas (API)</a></li>
+        <li><a href="#detalhe-vaga" class="nav-link"><span class="icon">🔍</span> Detalhe & Candidatura</a></li>
+        <li><a href="#candidaturas" class="nav-link"><span class="icon">📋</span> Gestão de Status</a></li>
+        <li><a href="#curriculo" class="nav-link"><span class="icon">📄</span> Montador de Currículo</a></li>
+        <li><a href="#favoritos" class="nav-link"><span class="icon">❤️</span> Vagas Favoritas</a></li>
+        <li><a href="#perfil" class="nav-link"><span class="icon">👤</span> Perfil do Usuário</a></li>
+      </ul>
+
+      <div class="nav-title">Plataformas</div>
+      <ul class="nav-menu">
+        <li><a href="#responsividade" class="nav-link"><span class="icon">📱</span> Celular, Tablet e PC</a></li>
+        <li><a href="#execucao" class="nav-link"><span class="icon">💻</span> Como Executar</a></li>
+      </ul>
+    </aside>
+
+    <!-- ──────────────── CONTEÚDO PRINCIPAL ──────────────── -->
+    <main class="main-content">
+
+      <!-- HERO BANNER -->
+      <section id="inicio" class="hero-card">
+        <h1 class="hero-title">Manual Oficial do Usuário<br>CareerGo</h1>
+        <p class="hero-desc">
+          O <strong>CareerGo</strong> é uma plataforma moderna desenvolvida em Flutter para gestão de carreira, busca inteligente de vagas em tempo real e montagem estruturada de currículo profissional.
+        </p>
+        <div class="hero-tags">
+          <span class="hero-tag">⚡ Flutter 3.13</span>
+          <span class="hero-tag">🔥 Firebase Auth & Firestore</span>
+          <span class="hero-tag">🌐 Adzuna Jobs API (Brasil)</span>
+          <span class="hero-tag">📱 100% Responsivo</span>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 1: ARQUITETURA E TECNOLOGIAS -->
+      <section id="arquitetura" class="section">
+        <div class="section-header">
+          <div class="section-icon">⚙️</div>
+          <div>
+            <h2 class="section-title">Arquitetura & Tecnologias</h2>
+            <p class="section-subtitle">Pilares que sustentam o funcionamento do CareerGo</p>
+          </div>
+        </div>
+
+        <p>O aplicativo foi construído seguindo arquitetura limpa em camadas (Models, Services, Screens, Widgets e Theme), garantindo fácil manutenção e alta performance:</p>
+
+        <div class="grid-3">
+          <div class="feature-card">
+            <h4>📱 Flutter & Dart</h4>
+            <p>Interface declarativa única com adaptação dinâmica para Android, iOS, Web e Desktop (Windows/macOS/Linux).</p>
+          </div>
+          <div class="feature-card">
+            <h4>🔥 Firebase Cloud</h4>
+            <p>Autenticação segura de usuários (Firebase Auth) e banco de dados NoSQL reativo em tempo real (Cloud Firestore).</p>
+          </div>
+          <div class="feature-card">
+            <h4>🌐 Adzuna API</h4>
+            <p>Integração direta com o catálogo nacional de vagas da Adzuna, permitindo buscas dinâmicas, filtros por cargo e faixa salarial.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 2: AUTENTICAÇÃO -->
+      <section id="autenticacao" class="section">
+        <div class="section-header">
+          <div class="section-icon">🔐</div>
+          <div>
+            <h2 class="section-title">1. Autenticação (Login e Cadastro)</h2>
+            <p class="section-subtitle">Acesso seguro individual com Firebase Auth</p>
+          </div>
+        </div>
+
+        <p>Ao abrir o app, a <strong>Splash Screen</strong> exibe a identidade visual do CareerGo e redireciona automaticamente para o fluxo de autenticação.</p>
+
+        <div class="steps-container">
+          <div class="step-row">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Criar uma Nova Conta</h4>
+              <p>Na tela de Login, toque em <strong>"Criar conta"</strong>. Preencha seu <strong>Nome Completo</strong>, <strong>E-mail</strong> e <strong>Senha</strong> (mínimo de 6 dígitos). O nome cadastrado será utilizado para personalizar sua experiência no aplicativo.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Entrar com Conta Existente</h4>
+              <p>Insira seu e-mail e senha. O sistema valida os dados diretamente no Firebase Auth e exibe mensagens em português caso haja qualquer erro (como senha incorreta ou e-mail inexistente).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>🔒 Sessão Segura e Persistente:</strong>
+          Uma vez logado, seus dados ficam vinculados ao seu ID único (UID), permitindo que você acesse suas candidaturas, favoritos e currículo de qualquer dispositivo.
+        </div>
+      </section>
+
+      <!-- SEÇÃO 3: DASHBOARD -->
+      <section id="dashboard" class="section">
+        <div class="section-header">
+          <div class="section-icon">📊</div>
+          <div>
+            <h2 class="section-title">2. Painel Inicial (Dashboard)</h2>
+            <p class="section-subtitle">Visão 360° do progresso das suas candidaturas</p>
+          </div>
+        </div>
+
+        <p>A aba <strong>Início</strong> reúne em um único lugar as principais informações da sua jornada profissional:</p>
+
+        <div class="grid-2">
+          <div class="feature-card">
+            <h4>📈 Contadores em Tempo Real</h4>
+            <p>Cards coloridos alimentados automaticamente pelo Firestore indicando quantas candidaturas estão em <strong>Em análise</strong>, <strong>Entrevistas</strong>, <strong>Aprovadas</strong> ou <strong>Rejeitadas</strong>.</p>
+          </div>
+          <div class="feature-card">
+            <h4>📄 Banner Montador de Currículo</h4>
+            <p>Card de destaque roxo com botão rápido <strong>"Montar"</strong>, permitindo que você acesse ou atualize seu currículo profissional com apenas um clique.</p>
+          </div>
+        </div>
+
+        <h4 style="margin-top: 20px; margin-bottom: 12px;">Atalhos de Acesso Rápido:</h4>
+        <div class="grid-4">
+          <div class="feature-card" style="text-align: center;">
+            <div style="font-size: 24px; margin-bottom: 8px;">🔍</div>
+            <strong>Vagas</strong>
+            <p>Busca na Adzuna</p>
+          </div>
+          <div class="feature-card" style="text-align: center;">
+            <div style="font-size: 24px; margin-bottom: 8px;">❤️</div>
+            <strong>Favoritos</strong>
+            <p>Vagas salvas</p>
+          </div>
+          <div class="feature-card" style="text-align: center;">
+            <div style="font-size: 24px; margin-bottom: 8px;">📋</div>
+            <strong>Candidaturas</strong>
+            <p>Acompanhamento</p>
+          </div>
+          <div class="feature-card" style="text-align: center;">
+            <div style="font-size: 24px; margin-bottom: 8px;">📄</div>
+            <strong>Currículo</strong>
+            <p>Editar / Pré-visualizar</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 4: BUSCA DE VAGAS -->
+      <section id="vagas" class="section">
+        <div class="section-header">
+          <div class="section-icon">💼</div>
+          <div>
+            <h2 class="section-title">3. Busca e Exploração de Vagas</h2>
+            <p class="section-subtitle">Integração com centenas de milhares de vagas no Brasil</p>
+          </div>
+        </div>
+
+        <p>Na aba <strong>Vagas</strong>, o aplicativo conecta-se à API da <strong>Adzuna</strong> para trazer oportunidades atualizadas em todo o território nacional.</p>
+
+        <div class="steps-container">
+          <div class="step-row">
+            <div class="step-num">A</div>
+            <div class="step-body">
+              <h4>Pesquisa por Palavra-Chave</h4>
+              <p>Digite cargos ou tecnologias (ex: <em>"Flutter", "Desenvolvedor", "Assistente Administrativo"</em>) na barra de pesquisa no topo e aperte Enter ou o botão de busca.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">B</div>
+            <div class="step-body">
+              <h4>Filtros Rápidos por Categorias</h4>
+              <p>Chips horizontais com rolagem rápida permitindo filtrar instantaneamente por <strong>Tecnologia, Vendas, Atendimento, Finanças, Engenharia, Saúde, Marketing</strong> e mais 22 setores.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">C</div>
+            <div class="step-body">
+              <h4>Paginação Sob Demanda</h4>
+              <p>Ao chegar ao fim da lista, toque em <strong>"Carregar mais"</strong> para carregar os próximos 20 resultados sem perder o termo de pesquisa atual.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 5: DETALHES DA VAGA E CANDIDATURA -->
+      <section id="detalhe-vaga" class="section">
+        <div class="section-header">
+          <div class="section-icon">🔍</div>
+          <div>
+            <h2 class="section-title">4. Detalhes da Vaga & Candidatura</h2>
+            <p class="section-subtitle">Inscrição externa e registro automático no seu histórico</p>
+          </div>
+        </div>
+
+        <p>Ao clicar em qualquer card de vaga na lista ou nos favoritos, uma tela de detalhes completa é aberta (em celulares como tela inteira, e em tablets/PCs como um modal limpo centralizado):</p>
+
+        <div class="grid-2">
+          <div class="feature-card">
+            <h4>📖 Informações Completas</h4>
+            <p>Empresa com logo identificador colorido, localização, modalidade (<em>Remoto / Híbrido</em>), tipo de contrato (<em>Full-time / Meio período</em>), salário formatado em Real e descrição completa.</p>
+          </div>
+          <div class="feature-card">
+            <h4>🚀 Botão "Candidatar-me" Inteligente</h4>
+            <p>Abre a vaga no site original e, ao retornar ao app, pergunta se você deseja registrar a candidatura para acompanhar os próximos passos no seu painel.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 6: GESTÃO DE CANDIDATURAS -->
+      <section id="candidaturas" class="section">
+        <div class="section-header">
+          <div class="section-icon">📋</div>
+          <div>
+            <h2 class="section-title">5. Gestão de Candidaturas</h2>
+            <p class="section-subtitle">Acompanhamento dos 6 status do processo seletivo</p>
+          </div>
+        </div>
+
+        <p>A aba <strong>Candidaturas</strong> funciona como seu painel de controle pessoal. Todas as vagas registradas aparecem ordenadas da mais recente para a mais antiga.</p>
+
+        <h4 style="margin: 20px 0 10px;">Os 6 Estágios de uma Candidatura:</h4>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;">
+          <span class="status-pill status-enviada">● Enviada</span>
+          <span class="status-pill status-analise">● Em análise</span>
+          <span class="status-pill status-entrevista">● Entrevista</span>
+          <span class="status-pill status-teste">● Teste técnico</span>
+          <span class="status-pill status-aprovada">● Aprovada</span>
+          <span class="status-pill status-rejeitada">● Rejeitada</span>
+        </div>
+
+        <div class="grid-2">
+          <div class="feature-card">
+            <h4>👆 Atualizar o Status</h4>
+            <p>Basta tocar no card da candidatura. Um menu inferior (BottomSheet) se abrirá para você selecionar o novo status com um toque.</p>
+          </div>
+          <div class="feature-card">
+            <h4>🗑️ Excluir Candidatura</h4>
+            <p>Arraste o card para a esquerda (gesto Swipe) e confirme no diálogo para remover o registro do seu banco de dados.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 7: MONTADOR DE CURRÍCULO -->
+      <section id="curriculo" class="section">
+        <div class="section-header">
+          <div class="section-icon">📄</div>
+          <div>
+            <h2 class="section-title">6. Montador de Currículo</h2>
+            <p class="section-subtitle">Monte e visualize seu currículo profissional em 4 etapas</p>
+          </div>
+        </div>
+
+        <p>O CareerGo possui um módulo nativo completo para construção de currículos salvos no Cloud Firestore. A tela conta com duas visualizações:</p>
+
+        <div class="steps-container">
+          <div class="step-row">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Sobre você</h4>
+              <p>Objetivo profissional, telefone / WhatsApp, cidade de residência, URL do LinkedIn e do GitHub.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Experiências Profissionais</h4>
+              <p>Adicione, edite ou remova experiências anteriores informando cargo, empresa, período (ex: Jan/2023 – Atual) e descrição das atividades.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Formação Acadêmica</h4>
+              <p>Cadastre cursos técnicos, graduações ou pós-graduações com o nome do curso, instituição de ensino e ano de conclusão.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Habilidades & Idiomas</h4>
+              <p>Adicione tags de competências técnicas (ex: <em>Flutter, Dart, SQL, Figma</em>) e idiomas com nível de proficiência (<em>Básico, Intermediário, Avançado ou Fluente</em>).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 24px;">
+          <strong>👁️ Modo Visualização (Preview):</strong>
+          No topo da tela de currículo, toque no ícone de <strong>Visualizar</strong> para ver seu currículo formatado como um documento executivo limpo e pronto para apresentação.
+        </div>
+      </section>
+
+      <!-- SEÇÃO 8: FAVORITOS E PERFIL -->
+      <section id="favoritos" class="section">
+        <div class="section-header">
+          <div class="section-icon">❤️</div>
+          <div>
+            <h2 class="section-title">7. Favoritos & Perfil</h2>
+            <p class="section-subtitle">Vagas salvas e configurações do usuário</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="feature-card">
+            <h4>❤️ Aba Favoritos</h4>
+            <p>Lista todas as vagas em que você clicou no ícone de coração. Os dados são sincronizados em tempo real no Firestore e ficam disponíveis mesmo após fechar o app.</p>
+          </div>
+          <div class="feature-card">
+            <h4>👤 Aba Perfil</h4>
+            <p>Exibe seu avatar, e-mail, resumo estatístico das suas candidaturas, botão de <strong>Editar Nome</strong>, atalho para o <strong>Meu Currículo</strong> e botão seguro de <strong>Sair da Conta</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 9: RESPONSIVIDADE -->
+      <section id="responsividade" class="section">
+        <div class="section-header">
+          <div class="section-icon">📱</div>
+          <div>
+            <h2 class="section-title">8. Adaptação a Telas (Multiplataforma)</h2>
+            <p class="section-subtitle">O app se ajusta automaticamente ao tamanho do dispositivo</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="feature-card">
+            <h4>📱 Celulares (< 600px)</h4>
+            <p>Barra de navegação inferior clássica (<code>NavigationBar</code>) com 6 abas, cards em 1 coluna e botões otimizados para toque com uma mão.</p>
+          </div>
+          <div class="feature-card">
+            <h4>📟 Tablets (600px - 900px)</h4>
+            <p>Barra lateral vertical compacta (<code>NavigationRail</code> com ícones), lista de vagas e candidaturas em grade de 2 colunas para melhor aproveitamento do espaço.</p>
+          </div>
+          <div class="feature-card">
+            <h4>💻 Computadores (> 900px)</h4>
+            <p>Barra lateral expandida com rótulos e ícones, modais centralizados para detalhes de vagas e container central fluido com largura máxima ergonômica.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 10: COMO EXECUTAR -->
+      <section id="execucao" class="section">
+        <div class="section-header">
+          <div class="section-icon">💻</div>
+          <div>
+            <h2 class="section-title">9. Guia de Execução Local</h2>
+            <p class="section-subtitle">Comandos úteis para desenvolvedores e testadores</p>
+          </div>
+        </div>
+
+        <p>Para rodar o projeto em sua máquina local:</p>
+
+        <div style="background: #1B1B3A; color: #E5E9F5; padding: 20px; border-radius: 12px; margin: 16px 0; font-family: monospace; font-size: 13.5px; line-height: 1.8;">
+          <span style="color: #6B7280;"># 1. Instalar as dependências do projeto</span><br>
+          flutter pub get<br><br>
+          <span style="color: #6B7280;"># 2. Verificar se o código está livre de erros de lint</span><br>
+          flutter analyze<br><br>
+          <span style="color: #6B7280;"># 3. Rodar no navegador Chrome (Web)</span><br>
+          flutter run -d chrome<br><br>
+          <span style="color: #6B7280;"># 4. Rodar no aplicativo nativo Windows</span><br>
+          flutter run -d windows<br><br>
+          <span style="color: #6B7280;"># 5. Rodar no emulador Android conectado</span><br>
+          flutter run -d android
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="doc-footer">
+        <p><strong>CareerGo</strong> &copy; 2026. Desenvolvido com carinho para impulsionar sua carreira profissional.</p>
+        <p style="margin-top: 6px; font-size: 12px; opacity: 0.7;">Documentação gerada para o repositório oficial <a href="https://github.com/pietraLG/CareerGo-1" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold;">pietraLG/CareerGo-1</a>.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    // Destaca o link da sidebar conforme o usuário rola a página
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      let currentSection = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (pageYOffset >= sectionTop) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSection) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
