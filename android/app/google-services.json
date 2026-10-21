@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "577716642825",
+    "firebase_url": "https://careergo-9b5e5-default-rtdb.firebaseio.com",
+    "project_id": "careergo-9b5e5",
+    "storage_bucket": "careergo-9b5e5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577716642825:android:5be826a0f39effe1b3c4d8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577716642825-aktrcbql71egv9h1thrqfimq9lt8s20f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1rJ8LfrOtI2csmYiXkn_ypSjE8yZZpJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577716642825-aktrcbql71egv9h1thrqfimq9lt8s20f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

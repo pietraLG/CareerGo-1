@@ -1,0 +1,81 @@
+/* Cores do CareerGo (mesma paleta do app, em um só lugar) */
+:root {
+  --primaria: #2563EB;
+  --primaria-escura: #1E40AF;
+  --secundaria: #06B6D4;
+  --fundo: #F8FAFC;
+  --superficie: #FFFFFF;
+  --texto: #0F172A;
+  --texto-suave: #64748B;
+  --borda: #E2E8F0;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Roboto, Arial, sans-serif; background: var(--fundo); color: var(--texto); line-height: 1.5; }
+[hidden] { display: none !important; }
+button, input, select { font: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--secundaria); outline-offset: 2px; }
+
+/* Cabeçalho */
+.topo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 24px; background: var(--superficie); border-bottom: 1px solid var(--borda); }
+.logo { font-size: 1.5rem; color: var(--primaria-escura); }
+.logo strong { font-weight: 800; color: var(--secundaria); }
+.abas { display: flex; gap: 6px; flex-wrap: wrap; }
+.abas button { background: none; border: 0; padding: 8px 14px; border-radius: 999px; cursor: pointer; color: var(--texto-suave); font-weight: 600; }
+.abas button.ativa { background: var(--primaria); color: #fff; }
+.abas span { background: var(--borda); color: var(--texto); border-radius: 999px; padding: 0 7px; font-size: 0.75rem; }
+
+/* Busca */
+.busca { background: var(--primaria-escura); color: #fff; padding: 32px 24px; }
+.busca h1 { max-width: 760px; margin: 0 auto 20px; font-size: clamp(1.5rem, 3.5vw, 2.4rem); line-height: 1.2; }
+.caixa-busca { max-width: 760px; margin: 0 auto; background: var(--superficie); border-radius: 14px; padding: 12px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; color: var(--texto); }
+.campo { display: block; }
+.campo span { display: block; font-size: 0.78rem; color: var(--texto-suave); margin-bottom: 2px; }
+.campo input { width: 100%; padding: 10px 12px; border: 2px solid var(--borda); border-radius: 10px; }
+.botao { background: var(--primaria); color: #fff; border: 0; border-radius: 10px; padding: 0 22px; font-weight: 700; cursor: pointer; min-height: 44px; align-self: end; }
+.botao:hover { background: var(--primaria-escura); }
+.botao:disabled { background: var(--texto-suave); cursor: default; }
+.botao.claro { background: var(--superficie); color: var(--primaria); border: 2px solid var(--primaria); }
+.filtros { max-width: 760px; margin: 14px auto 0; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.filtros select { padding: 8px 12px; border-radius: 10px; border: 0; background: rgba(255,255,255,.15); color: #fff; }
+.filtros option { color: var(--texto); }
+.link { background: none; border: 0; color: #fff; text-decoration: underline; cursor: pointer; }
+
+/* Resultado: lista + detalhes */
+.resultado, .painel { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.contagem { margin: 0 0 12px; color: var(--texto-suave); }
+.colunas { display: grid; grid-template-columns: 400px 1fr; gap: 20px; align-items: start; }
+.lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.lista li { position: relative; }
+.card { width: 100%; text-align: left; background: var(--superficie); border: 2px solid var(--borda); border-radius: 14px; padding: 14px 52px 14px 14px; cursor: pointer; display: block; }
+.card.ativa { border-color: var(--primaria); }
+.card b { display: block; }
+.card small { color: var(--texto-suave); display: block; }
+.card.fixo { cursor: default; padding-right: 14px; }
+.coracao { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--fundo); cursor: pointer; font-size: 1.1rem; color: var(--texto-suave); }
+.coracao.on { color: #EF4444; }
+
+.detalhe { position: sticky; top: 16px; background: var(--superficie); border: 1px solid var(--borda); border-radius: 16px; padding: 24px; }
+.detalhe h2 { margin: 0 0 4px; }
+.etiquetas { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.etiqueta { background: var(--fundo); border: 1px solid var(--borda); border-radius: 999px; padding: 2px 10px; font-size: 0.8rem; }
+.salario { font-weight: 700; color: var(--primaria-escura); font-size: 1.1rem; }
+.acoes { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.detalhe h3 { margin: 18px 0 6px; }
+.vazio { color: var(--texto-suave); }
+
+/* Status */
+.chip { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; color: #fff; background: var(--cor); }
+.resumo { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin-bottom: 20px; }
+.resumo div { background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px; padding: 12px; text-align: center; }
+.resumo b { display: block; font-size: 1.6rem; color: var(--primaria-escura); }
+.resumo span { font-size: 0.8rem; color: var(--texto-suave); }
+.linha { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 10px; }
+.linha select { padding: 8px; border: 2px solid var(--borda); border-radius: 10px; background: var(--superficie); }
+.perigo { background: none; border: 2px solid #EF4444; color: #EF4444; border-radius: 10px; padding: 6px 12px; cursor: pointer; font-weight: 600; }
+
+/* Telas pequenas */
+@media (max-width: 860px) {
+  .caixa-busca { grid-template-columns: 1fr; }
+  .colunas { grid-template-columns: 1fr; }
+  .detalhe { position: static; }
+}

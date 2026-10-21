@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CareerGo - Organize sua carreira</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho com logo e abas de navegação -->
+  <header class="topo">
+    <span class="logo">Career<strong>Go</strong></span>
+    <nav class="abas" aria-label="Seções">
+      <button type="button" data-aba="vagas" class="ativa">Vagas</button>
+      <button type="button" data-aba="candidaturas">Candidaturas <span id="qtdCand">0</span></button>
+      <button type="button" data-aba="favoritos">Favoritos <span id="qtdFav">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ABA 1: VAGAS (busca + lista + detalhes) -->
+    <section id="aba-vagas">
+      <div class="busca">
+        <h1>Organize sua carreira. Acompanhe suas oportunidades.</h1>
+        <div class="caixa-busca">
+          <label class="campo">
+            <span>Cargo ou empresa</span>
+            <input id="cargo" type="text" placeholder="Ex.: estágio em TI">
+          </label>
+          <label class="campo">
+            <span>Localização</span>
+            <input id="local" type="text" list="cidades" placeholder="Escolha ou digite a cidade">
+            <datalist id="cidades">
+              <option value="São Paulo - SP"></option>
+              <option value="Rio de Janeiro - RJ"></option>
+              <option value="Belo Horizonte - MG"></option>
+              <option value="Curitiba - PR"></option>
+              <option value="Salvador - BA"></option>
+              <option value="Remoto"></option>
+            </datalist>
+          </label>
+          <button type="button" id="btnBuscar" class="botao">Procurar vagas</button>
+        </div>
+        <div class="filtros">
+          <select id="fModalidade" aria-label="Modalidade">
+            <option value="">Modalidade</option>
+            <option>Presencial</option><option>Híbrido</option><option>Remoto</option>
+          </select>
+          <select id="fContrato" aria-label="Tipo de contratação">
+            <option value="">Contratação</option>
+            <option>Estágio</option><option>Jovem Aprendiz</option><option>CLT</option><option>PJ</option>
+          </select>
+          <select id="ordem" aria-label="Ordenar por">
+            <option value="relevancia">Maior relevância</option>
+            <option value="recentes">Mais recentes</option>
+          </select>
+          <button type="button" id="btnLimpar" class="link">Limpar filtros</button>
+        </div>
+      </div>
+
+      <div class="resultado">
+        <p id="contagem" class="contagem"></p>
+        <div class="colunas">
+          <ul id="listaVagas" class="lista"></ul>
+          <article id="detalhe" class="detalhe" aria-live="polite"></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA 2: CANDIDATURAS (resumo + acompanhamento de status) -->
+    <section id="aba-candidaturas" class="painel" hidden>
+      <h2>Minhas candidaturas</h2>
+      <div id="resumo" class="resumo"></div>
+      <ul id="listaCand" class="lista"></ul>
+    </section>
+
+    <!-- ABA 3: FAVORITOS -->
+    <section id="aba-favoritos" class="painel" hidden>
+      <h2>Vagas favoritas</h2>
+      <ul id="listaFav" class="lista"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
